@@ -1,1 +1,80 @@
-<p>assginment-tdf-approch works!</p>
+<div class="container">
+   <form #userForm="ngForm" (ngSubmit)="onSubmit()" >
+    <div class="row g-2">
+       <h3> Compressive Strength:</h3> 
+        <div class="col-md">
+          <div class="form-floating">
+            <div class="col px-1 mb-2">
+                <label for="input1" class="ms-2 position-absolute" style="margin-top: -0.75rem !important">
+                    <span class="h6 small bg-white text-muted px-1">CS 25%</span>
+                </label>
+                <input type="text" class="form-control mt-2" name="cs25" required ngModel>
+            </div>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="form-floating">
+            <div class="col px-1 mb-2">
+                <label for="input1" class="ms-2 position-absolute" style="margin-top: -0.75rem !important">
+                    <span class="h6 small bg-white text-muted px-1">CS 65%</span>
+                </label>
+                <input type="text" class="form-control mt-2"  name="cs65" required ngModel>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <h3>Compression Test :</h3>
+      </div>
+      <div class="row my-3 text-center">
+        <div class="col-sm-2"><span>Values</span></div>
+        <div class="col-sm-5"><span>Before</span></div>
+        <div class="col-sm-5"><span>After</span></div>
+        <hr class="my-3">
+      </div>
+      <div class="row my-3">
+        <div class="col-sm-2">Test # 1</div>
+        <div class="col-sm-5 my-2">
+            <input type="number"  #test1before="ngModel" class="form-control" name="test1before"  value=""
+            placeholder="Value for Before" ngModel>
+        </div>
+        <div class="col-sm-5 my-2"><input type="number" #test1after="ngModel" class="form-control" name="test1after" placeholder="Value for After" ngModel></div> 
+      </div>
+      <div class="row  my-3">
+        <div class="col-sm-2 ">Test # 2</div>
+        <div class="col-sm-5 my-2"><input type="number" #test2before="ngModel" class="form-control" name="test2before" placeholder="Value for Before" ngModel></div>
+        <div class="col-sm-5 my-2"><input type="number" #test2after="ngModel" class="form-control" name="test2after" placeholder="Value for After" ngModel></div> 
+      </div>
+      <div class="row  my-3">
+        <div class="col-sm-2 ">Test # 3</div>
+        <div class="col-sm-5 my-2"><input type="number" #test3before="ngModel" class="form-control" name="test3before" placeholder="Value for Before" ngModel></div>
+        <div class="col-sm-5 my-2"><input type="number" #test3after="ngModel" class="form-control" name="test3after" placeholder="Value for After" ngModel></div> 
+      </div>
+      <div class="row my-3 ">
+        <div class="col-sm-2 ">Test # 4</div>
+        <div class="col-sm-5 my-2"><input type="number" #test4before="ngModel" class="form-control" name="test4before" placeholder="Value for Before" ngModel></div>
+        <div class="col-sm-5 my-2"><input type="number" #test4after="ngModel" class="form-control" name="test4after" placeholder="Value for After" ngModel></div> 
+      </div>
+      <div class="row my-3 ">
+        <div class="col-sm-2 ">Average</div>
+        <div class="col-xl-5 my-2"><input type="number" value="{{avgbefore}}" class="form-control"  name="avgbefore" placeholder="Averge of Before" readonly></div>
+        <div class="col-xl-5 my-2"><input type="number" value="{{avgafter}}" class="form-control"  name="avgafter"  placeholder="Averge of After" readonly></div> 
+      </div>
+      <div class="row">
+        <div class="col-sm-2">Compression Set AVG:</div>
+        <div class="col-sm-5">
+            <div class="input-group mb-3">
+                <input type="number" class="form-control" value="{{compressionavg}}" name=" avgcompression" readonly>
+                <span class="input-group-text fw-bold">%</span>
+            </div>
+        </div>  
+        <div class="col-sm-5">
+            <button class=" btn btn-primary" [disabled]="!userForm.valid"> Submit Form</button>
+        </div> 
+      </div> 
+      <div class="row" *ngIf="sub">
+        {{userForm | json}}
+    </div>
+    </form> 
+    
+</div>
