@@ -5,17 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { AssginmentTdfApprochComponent } from './assginment-tdf-approch/assginment-tdf-approch.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AssignmentRmfApprochComponent } from './assignment-rmf-approch/assignment-rmf-approch.component';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    AssginmentTdfApprochComponent
+    AssginmentTdfApprochComponent,
+    AssignmentRmfApprochComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
